@@ -1,0 +1,8 @@
+If we divide the histogram into equal size parts, without reference to the number of pixels in
+each part, we may get a part where the number of pixels is 0.
+In the calculation process, we divide the segment's hue span by the number of pixels.
+So if we divide by the number of pixels in the part where the number is 0 we get a division by 0
+and the software will crash.
+So we make sure that each part of the distribution has a similar number of pixels
+and so we do not get a division by 0.
+
